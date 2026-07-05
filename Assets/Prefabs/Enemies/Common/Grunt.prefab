@@ -70,7 +70,7 @@ MonoBehaviour:
   layersToCheckFor:
     serializedVersion: 2
     m_Bits: 64
-  maxDetectionRange: 3
+  maxDetectionRange: 5
   maxTurningDegreesDelta: 5
   speedWhileNextToPlayer: 0
   enableVisualDetectionRadius: 0

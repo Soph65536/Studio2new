@@ -21,6 +21,7 @@ public class PlayerAttack : MonoBehaviour
 
     //for the charged heavy
     [HideInInspector] public int ChargedHeavyDmg = 0; //public to be referenced by slider
+    [SerializeField] private float ChargedHeavyTickRate = 0.3f; //charge time increase
     private bool isChargingChargedHeavyAttack = false;
 
     [Header("Cooldown Delays")]
@@ -157,7 +158,7 @@ public class PlayerAttack : MonoBehaviour
             //increase heavy attack per 0.5 secs that it is being charged
             while (!heavyAttacking && isChargingChargedHeavyAttack && ChargedHeavyDmg < MaxChargedHeavyDmg)
             {
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(ChargedHeavyTickRate);
                 ChargedHeavyDmg += ChargedHeavyDmgAddition;
             }
 
