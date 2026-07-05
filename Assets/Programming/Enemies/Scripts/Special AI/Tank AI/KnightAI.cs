@@ -173,6 +173,8 @@ public class KnightAI : GruntAI
 		healthWithShield.onShieldBreak += OnShieldBreak;
 		healthWithShield.onShieldActivate += OnShieldActivate;
 
+        GetComponent<AIBase>().onDeath += OnDeath;
+
         base.Awake();
 	}
 	#endregion
@@ -515,5 +517,19 @@ public class KnightAI : GruntAI
 	{
 		onSlamHitGroundSFXPlayOnce?.Invoke();
 	}
+	#endregion
+
+	#region On Death
+
+	private void OnDeath(Transform entityTransform)
+	{
+		//kill all remaining enemies in the level cus we finished it anyway now
+		GameObject[] allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+		foreach(GameObject enemy in allEnemies)
+		{
+			Destroy(enemy);
+		}
+	}
+
 	#endregion
 }

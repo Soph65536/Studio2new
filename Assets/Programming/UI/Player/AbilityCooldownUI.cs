@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class AbilityCooldownUI : MonoBehaviour
 {
     //ui stuff
+    [SerializeField] private GameObject abilityIcon;
+
     private Slider cooldownBar;
     private TextMeshProUGUI cooldownText;
 
@@ -64,11 +66,13 @@ public class AbilityCooldownUI : MonoBehaviour
                 case AbilityType.HeavyAttack:
                     if (playerAttackScript.unlockedHeavyAttack) //if unlocked, set cooldown to whether heavy attacking
                     {
+                        abilityIcon.SetActive(true);
                         abilityInUse = playerAttackScript.heavyAttacking;
                         cooldownBar.maxValue = playerAttackScript.HeavyAttackDelay;
                     }
                     else //otherwise set slider to max so it looks disabled
                     {
+                        abilityIcon.SetActive(false);
                         abilityInUse = false;
                         cooldownBar.enabled = true;
                         cooldownBar.maxValue = 1;
@@ -79,11 +83,13 @@ public class AbilityCooldownUI : MonoBehaviour
                 case AbilityType.Shield:
                     if (playerShieldScript.unlockedShield) //if unlocked, set cooldown to whether using shield
                     {
+                        abilityIcon.SetActive(true);
                         abilityInUse = playerShieldScript.isShieldActive || playerShieldScript.isShieldInCoolDown;
                         cooldownBar.maxValue = playerShieldScript.shieldUsageSec + playerShieldScript.coolDownSec;
                     }
                     else //otherwise set slider to max so it looks disabled
                     {
+                        abilityIcon.SetActive(false);
                         abilityInUse = false;
                         cooldownBar.enabled = true;
                         cooldownBar.maxValue = 1;

@@ -396,4 +396,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c4de8b99b6ac2f40aa0b79ee1622ea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  abilityIcon: {fileID: 7243104259962166977}
   abilityType: 3
