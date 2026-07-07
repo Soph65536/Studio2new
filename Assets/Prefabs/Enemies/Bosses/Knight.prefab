@@ -5430,11 +5430,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7de78690f7549c4ab062340fcf01189, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 2.75
+  maxSpeed: 2.35
   currentAIState: 1
   lightAttackClass:
-    lightAttackDamage: 20
-    lightAttackRate: 1
+    lightAttackDamage: 10
+    lightAttackRate: 1.25
     minDistanceForAttack: 2
     boxCastDepth: 2
     boxCastLength: 3
@@ -5450,11 +5450,11 @@ MonoBehaviour:
   enableVisualDetectionLine: 0
   slamAttackClass:
     slamAttackRateCoolDown: 10
-    slamWindUpTime: 1.25
+    slamWindUpTime: 1.5
     slamMaxRadius: 5
     slamAttackDamageAtMaxRange: 5
     slamMinRadius: 3
-    slamAttackDamageAtMinRange: 55
+    slamAttackDamageAtMinRange: 40
     minimumDistanceForForceSlam: 5
     timeWithinRadiusBeforeSlam: 3
   serratedSlashAttackClass:
@@ -5494,7 +5494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fdbc7e2400dda745ad4d0aa673350c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 150
+  maxHealth: 100
   shieldObject: {fileID: 2485080906551701511}
   shieldActive: 1
   coolDownTime: 7
