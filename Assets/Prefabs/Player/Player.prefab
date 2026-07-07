@@ -3350,18 +3350,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unlockedHeavyAttack: 0
   HammerModel: {fileID: 5644760467099071960}
-  LightDmg: 3
-  HeavyDmg: 5
+  LightDmg: 4
+  HeavyDmg: 8
   ChargedHeavyDmgAddition: 5
-  MaxChargedHeavyDmg: 25
+  MaxChargedHeavyDmg: 30
   ChargedHeavyDmg: 0
   ChargedHeavyTickRate: 0.3
-  LightAttackDelay: 0.5
+  LightAttackDelay: 0.4
   HeavyAttackDelay: 2.5
   lightAttacking: 0
   heavyAttacking: 0
-  heavyAttackRadius: 1.5
-  chargedHeavyAttackRadius: 2
+  heavyAttackRadius: 1.75
+  chargedHeavyAttackRadius: 2.25
   showLightRadius: 1
   showHeavyRadius: 1
   showChargedHeavyRadius: 1
