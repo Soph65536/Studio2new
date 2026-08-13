@@ -68,6 +68,14 @@ public class DialogueHandler : MonoBehaviour
                 StartCoroutine("ProgressDialogueAfterXSeconds", 1);
             }
         }
+
+        if(audioSource.isPlaying && currentData != null)
+        {
+            if(Input.GetKeyUp(KeyCode.Space))
+            {
+                GetNextDialogueData(currentData);
+            }
+        }
     }
 
     private IEnumerator ProgressDialogueAfterXSeconds(float seconds)
