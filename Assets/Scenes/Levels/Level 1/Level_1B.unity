@@ -145107,6 +145107,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5986573266199650273, guid: f7c3722b2d96f5645b6bc924b044709b,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6071200366014425033, guid: f7c3722b2d96f5645b6bc924b044709b,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -145121,6 +145126,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6509453713498881600, guid: f7c3722b2d96f5645b6bc924b044709b,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6974774331018374295, guid: f7c3722b2d96f5645b6bc924b044709b,
         type: 3}
