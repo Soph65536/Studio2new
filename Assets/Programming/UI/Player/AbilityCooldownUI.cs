@@ -105,7 +105,7 @@ public class AbilityCooldownUI : MonoBehaviour
         inCooldown = true;
 
         float currentTime = cooldownBar.maxValue; //timer for the cooldown
-        float timeIncrements = 0.1f; //how many seconds between current time being updated
+        float timeIncrements = 0.05f; //how many seconds between current time being updated
 
         //setting cooldown bar to active and initial values
         cooldownBar.enabled = true;
@@ -113,7 +113,7 @@ public class AbilityCooldownUI : MonoBehaviour
         cooldownText.text = currentTime.ToString();
 
         //loop for cooldown happening
-        while (currentTime > 0)
+        while (currentTime >= 0.1f)
         {
             currentTime -= timeIncrements; //update current time
 

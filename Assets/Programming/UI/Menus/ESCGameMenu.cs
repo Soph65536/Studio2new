@@ -7,7 +7,7 @@ public class ESCGameMenu : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyUp(KeyCode.Escape))
-        {
+        {            
             UIManager.Instance.PressGameMenu();
         }
     }
