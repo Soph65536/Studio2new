@@ -188,13 +188,21 @@ public class UIManager : MonoBehaviour
 
     //game menu buttons
     public void PressGameMenu()
-    {
+    {        
+        if(gameMenuObj.activeInHierarchy)
+        {            
+            PressReturn();
+            return;
+        }
+
         if (!controlsObj.activeInHierarchy && !optionsObj.activeInHierarchy)
-        {
+        {            
             EnterMenu();
 
             inGameMenu = true;
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>().enabled = false;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().isPaused = true;
+            Time.timeScale = 0;
             gameMenuObj.SetActive(true);
         }
     }
@@ -216,7 +224,12 @@ public class UIManager : MonoBehaviour
         if (wasInControls) { PressOptions(); } //reopen options if was in controls before
         else if (wasInControlsGameMenu) { PressGameMenu(); PressOptions(); } //reopen game menu and options if was in controls from game menu before
         else if (wasInOptionsGameMenu) { PressGameMenu(); } //reopen game menu if was in options from game menu before
-        else { GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>().enabled = true; }
+        else 
+        {            
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>().enabled = true;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().isPaused = false;
+            Time.timeScale = 1;
+        }
     }
 
     public void PressMainMenu()

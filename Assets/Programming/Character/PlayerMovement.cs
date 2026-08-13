@@ -36,6 +36,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioSource walkAudioSource;
     private bool playingWalkSound;
 
+    [HideInInspector]
+    public bool isPaused = false; //assume the game starts unpaused 
+
     private void Awake()
     {
         CharacterController = GetComponent<CharacterController>(); //Gets the CharacterController from the component
@@ -52,6 +55,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (isPaused) return;
+
         HandleMovement(); //Updates the HandleMovement by every frame
         CharacterAnimations(); //This is for animating the character
         CharacterSound(); //This is for playing the movement sfx
@@ -133,7 +138,7 @@ public class PlayerMovement : MonoBehaviour
         MyAnim.SetFloat("Horiz", Vector3.Dot(playerRight, movementWithoutGravity));
         MyAnim.SetFloat("Vert", Vector3.Dot(playerForward, movementWithoutGravity));
         //Debug.Log(CurrentMovement);
-        MyAnim.SetFloat("MoveSpeed", Mathf.Max(Mathf.Abs(CurrentMovement.z), Mathf.Abs(CurrentMovement.x)));
+        MyAnim.SetFloat("MoveSpeed", Mathf.Max(Mathf.Abs(CurrentMovement.z), Mathf.Abs(CurrentMovement.x)));        
     }
 
     private void CharacterSound()
