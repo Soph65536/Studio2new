@@ -61,7 +61,7 @@ MonoBehaviour:
     m_Bits: 64
   rangeLimiter: 999
   boxCastHeight: 5
-  boxCastWidth: 2
+  boxCastWidth: 0.75
   distanceForBoxLength: 0
   midPoint: {x: 0, y: 0, z: 0}
   boxRotation: {x: 0, y: 0, z: 0, w: 0}

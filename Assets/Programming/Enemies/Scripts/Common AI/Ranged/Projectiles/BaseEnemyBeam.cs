@@ -139,4 +139,11 @@ public class BaseEnemyBeam : BaseEnemyProjectile
 			damageTimer = damageTick; // Damage has been taken so cooldown reset.
 		}
 	}
+
+    private void OnDrawGizmosSelected()
+    {
+		Gizmos.color = Color.red;
+		Gizmos.DrawCube(midPoint, new Vector3(boxCastWidth, boxCastHeight, distanceForBoxLength * 2));
+    }
+
 }
