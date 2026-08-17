@@ -25,8 +25,7 @@ public class UIManager : MonoBehaviour
     public int Level1ID = 1;
     public int Level2ID = 2;
 
-    [Header("Menu GameObject Prefabs")]
-    [SerializeField] private GameObject levelSelectObj;
+    [Header("Menu GameObject Prefabs")]    
     [SerializeField] private GameObject gameMenuObj;
     [SerializeField] private GameObject optionsObj;
     [SerializeField] private GameObject controlsObj;
@@ -85,8 +84,7 @@ public class UIManager : MonoBehaviour
     }
 
     private void DisableAllMenus()
-    {
-        levelSelectObj.SetActive(false);
+    {        
         gameMenuObj.SetActive(false);
         optionsObj.SetActive(false);
         controlsObj.SetActive(false);
@@ -99,9 +97,9 @@ public class UIManager : MonoBehaviour
     //main menu buttons
     public void PressPlay()
     {
-        EnterMenu();
+        //EnterMenu();
 
-        levelSelectObj.SetActive(true);
+        SelectLevel(1);
     }
 
     public void PressOptions()
@@ -225,7 +223,9 @@ public class UIManager : MonoBehaviour
         else if (wasInControlsGameMenu) { PressGameMenu(); PressOptions(); } //reopen game menu and options if was in controls from game menu before
         else if (wasInOptionsGameMenu) { PressGameMenu(); } //reopen game menu if was in options from game menu before
         else 
-        {            
+        {
+            if (!GameObject.FindGameObjectWithTag("Player")) return;
+
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>().enabled = true;
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().isPaused = false;
             Time.timeScale = 1;
